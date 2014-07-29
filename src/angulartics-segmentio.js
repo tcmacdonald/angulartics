@@ -13,9 +13,9 @@
  */
 angular.module('angulartics.segment.io', ['angulartics'])
 .config(['$analyticsProvider', function ($analyticsProvider) {
-  $analyticsProvider.registerPageTrack(function (path) {
+  $analyticsProvider.registerPageTrack(function (path, properties) {
     try {
-        analytics.page(path);
+        analytics.page(path, properties);
     } catch (e) {
         if (!(e instanceof ReferenceError)) {
             throw e;
